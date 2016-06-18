@@ -1,41 +1,33 @@
+// creating a date object by using "new"
+var d = new Date();
+var h = d.getHours();
+var m = d.getMinutes();
+var s = d.getSeconds();
+var ampm = h >= 12 ? 'pm' : 'am';
+// using modulo to change out in order to input am and  pm
+h = h % 12;
+h = h ? h : 12; // the hour '0' should be '12
 
-// Display the current day and time with the following format: Today is Sunday. The current time is 9 AM : 50 : 22
-function updateClock ( )
- 	{
- 	var currentTime = new Date ( );
-  	var currentHours = currentTime.getHours ( );
-  	var currentMinutes = currentTime.getMinutes ( );
-  	var currentSeconds = currentTime.getSeconds ( );
-  	var currentWeek = currentTime.getDay ();
+// created an array to get the day of week
+var days = 
+["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-  	// Pad the minutes and seconds with leading zeros, if required
-  	currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
-  	currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
-
-  	// Choose either "AM" or "PM" as appropriate
-  	var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
-
-  	// Convert the hours component to 12-hour format if needed
-  	currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
-
-  	// Convert an hours component of "0" to "12"
-  	currentHours = ( currentHours == 0 ) ? 12 : currentHours;
-
-  	// Display day of week
-  	var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-  	// Compose the string for display
-  	var currentTimeString = currentWeek + ":" + currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
-  	
-  	
-   	$("#clock").html("Today is " + currentTimeString);
-   	  	
- }
-
-$(document).ready(function()
-{
-   setInterval('updateClock()', 1000);
-});
+// sending output of information to html
+document.getElementById("demo").innerHTML = "Today is " + days[d.getDay()] + '.' + " The current time is " + h + " " + ampm + " : " + m + " : " + s;
 
 
-// Find the area of a triangle where lengths of the three sides are 5, 7, 8.
+// triangle problem starting
+var side1 = 5; 
+var side2 = 6; 
+var side3 = 7; 
+var perimeter = (side1 + side2 + side3)/2;
+var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+console.log(area);
+document.getElementById("triangle").innerHTML = area.toFixed(4);
+
+
+// this is where the temp will start
+function toCelsius(f) {
+    return (5/9) * (f-32);
+}
+document.getElementById("temp").innerHTML = "The temperature in Celsius would be " + toCelsius(77);
