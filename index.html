@@ -5,37 +5,60 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Display the current day and time with the following format: Today is Sunday. The current time is 9 AM : 50 : 22 -->
-
+    <!-- Display the current day and time with the following format: Today is Sunday. The current time is 9 AM : 50 : 22 -->
     <title>Code Test 1</title>
-
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Link to my css file -->
+    <!-- Link to my css file -->
     <link rel="stylesheet" type="text/css" href="app/styles/styles.css">
 </head>
 
-<body>
-    
-    <div class="container-fluid" id="demo"></div>
-     <div class="container-fluid" id="triangle"></div>
-     ​<div class="scroll">This text be scrollin'!</div>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-    <div class="container-fluid" id="temp"></div>
-
-    
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <script src="bower_components/angular/angular.min.js"></script>
-
-    <!-- Link to my index.js file -->
-    <script src="index.js"></script>
+<body onload="animate_string('scroll')">
+    <h1>Write JavaScript programs to complete the following tasks</h1>
+    <div class="container-fluid">
+        <h3>1. Time Display</h3>
+        <p id="time"></p>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <h3>2. Display Area of a Triangle</h3>
+        <input id="side1">
+        <input id="side2">
+        <input id="side3">
+        <button type="button" class="btn btn-primary btn-sm" onclick="findArea()">Get Area</button>
+        <p id="triangle"></p>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <h3>3. Origin Scroll</h3>
+        <!--         <p class="scroll"></p>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ -->
+        <pre id="scroll">Origin Code Academy Rocks!</pre>
+        <!--         <marquee behavior="scroll" scrollamount="10" direction="left">Origin Code Academy Rocks!</marquee> -->
+    </div>
+    ​
+    <hr>
+    <div class="container-fluid">
+        <h3>4. Is this a Leap Year?</h3>
+        <input id=year>
+        <button type="button" class="btn btn-primary btn-sm" onclick="findYear()">Tell Me!!</button>
+        <p id="leapYear"></p>
+        <div>
+            <hr>
+            <div class="container-fluid">
+                <h3>5. Temperature Display</h3>
+                <p>Insert a number into one of the input fields below:</p>
+                <input id="c" onkeyup="convert('C')"> degrees Celsius
+                <br> equals
+                <br>
+                <input id="f" onkeyup="convert('F')"> degrees Fahrenheit
+            </div>
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="bower_components/angular/angular.min.js"></script>
+            <!-- Link to my index.js file -->
+            <script src="index.js"></script>
 </body>
 
 </html>
